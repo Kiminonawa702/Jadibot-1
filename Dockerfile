@@ -1,20 +1,23 @@
-# Base image: Node.js 18
-FROM node:21-alpine
+FROM node:18
 
-# Set the working directory
-WORKDIR /index
+# Set working directory
+WORKDIR /usr/src/app
 
-# Copy package.json and package-lock
-COPY package*.json ./
-
-# Install dependencies
+# Copy package files and install dependencies
+COPY package.json ./
 RUN npm install
 
-# Copy the rest of the application code
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y ffmpeg imagemagick webp && \
+    apt-get upgrade -y && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy the rest of the application files
 COPY . .
 
-# Expose port 3000
+# Expose the required port
 EXPOSE 3000
 
-# Run the bot
-CMD ["npm", "start"]
+# Command to run the application
+CMD ["node", "index.js"]
