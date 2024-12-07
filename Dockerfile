@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install -g pm2
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Run the bot
-CMD ["pm2", "start", "index.js"]
+CMD ["node", "index.js"]
