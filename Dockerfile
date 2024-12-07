@@ -1,8 +1,8 @@
 # Base image: Node.js 18
-FROM node:18-alpine
+FROM node:21-alpine
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /index
 
 # Copy package.json and package-lock
 COPY package*.json ./
