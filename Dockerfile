@@ -1,19 +1,20 @@
-FROM node:lts-buster
+# Base image: Node.js 18
+FROM node:18-alpine
 
-RUN apt-get update && \
-  apt-get install -y \
-  ffmpeg \
-  imagemagick \
-  webp && \
-  apt-get upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
+# Set the working directory
+WORKDIR /app
 
-COPY package.json .
+# Copy package.json and package-lock
+COPY package*.json ./
 
-RUN npm install
+# Install dependencies
+RUN npm ci
 
+# Copy the rest of the application code
 COPY . .
 
-EXPOSE 5000
+# Expose port 3000
+EXPOSE 3000
 
-RUN npm start
+# Run the bot
+CMD ["npm", "start"]
