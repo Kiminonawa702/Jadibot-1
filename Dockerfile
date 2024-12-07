@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Run the bot
-CMD ["node", "index.js"]
+CMD ["npm", "start"]
