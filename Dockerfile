@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Run the bot
-CMD ["pm2", "start", "index.js", "--name", "runbot"]
+CMD ["pm2", "start", "index.js"]
