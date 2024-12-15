@@ -1,8 +1,8 @@
 # Use Node.js v14
-FROM node:14
+FROM node:18
 
 # Create app directory
-WORKDIR /usr/src/index
+WORKDIR /usr/src/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
@@ -16,4 +16,4 @@ COPY . .
 # Expose the port
 EXPOSE 3000
 
-CMD [ "npm", "start"]
+CMD [ "node", "index.js"]
