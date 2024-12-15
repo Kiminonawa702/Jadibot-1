@@ -2,19 +2,18 @@
   "name": "readsw",
   "version": "1.0.0",
   "description": "Script untuk membuat auto read status WhatsApp make baileys",
-  "main": "index.js",
+  "main": "app.js && index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js"
+    "start": "app.js && node index.js"
   },
-  "keywords": [
-    "autoreadsw",
-    "baileys"
+  "keywords": ["Node.js", "Express", "Docker"],
   ],
   "author": "Dika Ardnt.",
   "license": "MIT",
   "dependencies": {
     "@whiskeysockets/baileys": "latest",
+    "express": "^4.17.1",
     "dotenv": "latest",
     "file-type": "latest",
     "fluent-ffmpeg": "latest",
