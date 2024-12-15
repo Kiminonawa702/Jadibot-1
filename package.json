@@ -2,10 +2,10 @@
   "name": "readsw",
   "version": "1.0.0",
   "description": "Script untuk membuat auto read status WhatsApp make baileys",
-  "main": "app.js",
+  "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "app.js"
+    "start": "node index.js"
   },
   "keywords": ["Node.js", "Express", "Docker"],
   ],
